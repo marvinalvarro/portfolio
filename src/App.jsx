@@ -26,6 +26,11 @@ export default function App() {
             <a className="btn btn-solid" href="#projects">Lihat Proyek</a>
             <a className="btn" href="#about">Tentang Gue</a>
           </div>
+          {profile.github && (
+  <a className="hero-handle" href={`https://github.com/${profile.github}`} target="_blank" rel="noreferrer">
+    github.com/{profile.github}
+  </a>
+)}
         </section>
 
         <Section id="about" title="About">

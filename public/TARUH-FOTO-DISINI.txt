@@ -1,1 +1,0 @@
-Taruh foto kamu di folder ini (misal foto.jpg), lalu isi photo: "/foto.jpg" di src/data/content.js

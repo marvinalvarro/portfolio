@@ -94,3 +94,6 @@ h1 { font-family: var(--serif); font-size: clamp(3rem, 9vw, 7.5rem); line-height
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.hero-handle { margin-top: 2rem; align-self: flex-start; color: var(--muted); font-size: .95rem; transition: color .2s; }
+.hero-handle:hover { color: var(--accent); }

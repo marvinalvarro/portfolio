@@ -1,9 +1,7 @@
-// Semua teks & link ada di sini. Edit file ini saja, tidak perlu menyentuh komponen.
-// Link/array yang dikosongkan ("" atau []) otomatis disembunyikan di halaman.
-
 export const profile = {
-  name: "Nama Kamu", // TODO: ganti dengan namamu
-  photo: "", // TODO: taruh fotomu di folder public/, lalu isi misalnya "/foto.jpg". Kosong = foto disembunyikan
+  name: "Umar Hadyu Al Fajri",
+  github: "marvinalvarro",
+  photo: "/foto.png",
   status: "Terbuka untuk belajar, kolaborasi, dan proyek baru",
   headline: "Building things, one project at a time.",
   intro:
@@ -13,22 +11,20 @@ export const profile = {
 export const about = {
   tagline: "Not an expert. Just someone who keeps building.",
   paragraphs: [
-    "Gue mahasiswa Teknik Informatika semester 5. Gue tertarik sama web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah jadi sesuatu yang bisa dipakai orang.",
+    "Gue Umar, mahasiswa Teknik Informatika semester 5 di Universitas Muhammadiyah Ponorogo. Gue tertarik sama web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah jadi sesuatu yang bisa dipakai orang.",
     "Di luar kuliah, gue mengelola komunitas Discord bernama Game Verse dan membangun platform digital untuk komunitas itu. Dari situ gue belajar bahwa bikin sesuatu buat orang lain jauh lebih menantang (dan seru) daripada bikin buat diri sendiri.",
     "Gue belum merasa jadi expert, dan itu oke. Gue lebih suka terus mencoba, salah, lalu memperbaikinya.",
   ],
 };
 
-// tech: isi hanya teknologi yang benar-benar kamu pakai di proyek itu.
-// demo / source: isi link kalau ada, kosongkan kalau belum.
 export const projects = [
   {
     title: "Game Verse",
     kind: "Komunitas Discord",
     description:
       "Komunitas gaming di Discord dengan sistem role, rank, event, dan bot otomatis untuk menjaga server tetap hidup.",
-    tech: ["Discord"], // TODO: tambahkan bot framework / bahasa yang kamu pakai
-    demo: "",
+    tech: ["Discord", "Node.js"],
+    demo: "https://discord.gg/N8Wg9Zv3z5",
     source: "",
   },
   {
@@ -36,8 +32,8 @@ export const projects = [
     kind: "Platform komunitas",
     description:
       "Platform untuk anggota Game Verse: login, memberi rating, dan menyampaikan masukan langsung ke pengelola.",
-    tech: [], // TODO: isi stack yang kamu pakai
-    demo: "",
+    tech: [],
+    demo: "https://bit.ly/gameverseid",
     source: "",
   },
   {
@@ -52,11 +48,10 @@ export const projects = [
 ];
 
 export const skills = {
-  used: ["HTML", "CSS", "JavaScript", "React", "Vite"], // TODO: sesuaikan dengan yang benar-benar kamu pakai
-  learning: ["UI/UX design", "Web development"], // TODO: sesuaikan
+  used: ["HTML", "CSS", "JavaScript", "Node.js", "React", "Vite"],
+  learning: ["UI/UX design", "Web development"],
 };
 
-// Tidak ada tanggal atau pengalaman kerja. Isi dengan prosesmu sendiri.
 export const journey = [
   {
     title: "Mulai dari rasa penasaran",
@@ -79,11 +74,10 @@ export const journey = [
 export const contact = {
   headline: "Got an idea? Let's make it happen.",
   text: "Punya ide, mau kolaborasi, atau sekadar ngobrol soal web? Kirim pesan aja.",
-  // TODO: ganti dengan link aslimu. Kosongkan href untuk menyembunyikan.
   links: [
-    { label: "Email", value: "email@kamu.com", href: "mailto:email@kamu.com" },
-    { label: "GitHub", value: "github.com/username", href: "https://github.com/username" },
-    { label: "Discord", value: "username", href: "https://discord.com/users/ID_KAMU" },
-    { label: "Instagram", value: "@username", href: "https://instagram.com/username" },
+    { label: "Email", value: "umarhadyu1505@gmail.com", href: "mailto:umarhadyu1505@gmail.com" },
+    { label: "GitHub", value: "@marvinalvarro", href: "https://github.com/marvinalvarro" },
+    { label: "Discord", value: "Game Verse server", href: "https://discord.gg/N8Wg9Zv3z5" },
+    { label: "Instagram", value: "@ahadyuuu__", href: "https://instagram.com/ahadyuuu__" },
   ],
 };
