@@ -17,6 +17,22 @@ const startIndex = () => Math.max(0, SLIDES.findIndex((s) => s.id === window.loc
 const wib = () =>
   new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Jakarta" }).replace(".", ":");
 
+const icon = (n) => `https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/${n}/${n}-original.svg`;
+const ICONS = {
+  html: "html5", css: "css3", javascript: "javascript", "node.js": "nodejs",
+  react: "react", vite: "vite", "ui/ux design": "figma", git: "git",
+  github: "github", python: "python", php: "php", mysql: "mysql", typescript: "typescript",
+};
+const Chip = ({ name }) => {
+  const key = ICONS[name.toLowerCase()];
+  return (
+    <li className="chip">
+      {key && <img src={icon(key)} alt="" width="20" height="20" loading="lazy" onError={(e) => (e.currentTarget.style.display = "none")} />}
+      {name}
+    </li>
+  );
+};
+
 export default function App() {
   const [index, setIndex] = useState(startIndex);
   const [time, setTime] = useState(wib);
@@ -79,11 +95,11 @@ export default function App() {
       <div className="skills">
         <div>
           <h3>Sudah dipakai di proyek</h3>
-          <p>{skills.used.join(", ")}</p>
+          <ul className="chips">{skills.used.map((s) => <Chip key={s} name={s} />)}</ul>
         </div>
         <div>
           <h3>Sedang dipelajari</h3>
-          <p>{skills.learning.join(", ")}</p>
+          <ul className="chips">{skills.learning.map((s) => <Chip key={s} name={s} />)}</ul>
         </div>
       </div>
     </Section>,
