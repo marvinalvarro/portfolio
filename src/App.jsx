@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import Section from "./components/Section.jsx";
 import Project from "./components/Project.jsx";
-import { profile, about, projects, skills, journey, contact } from "./data/content.js";
+import { profile, about, projects, skills, certificates, journey, contact } from "./data/content.js";
 
 const SLIDES = [
   { id: "home", label: "Beranda" },
   { id: "about", label: "Tentang" },
   { id: "projects", label: "Proyek" },
   { id: "skills", label: "Skill" },
+  { id: "certificates", label: "Sertifikat" },
   { id: "journey", label: "Jejak" },
   { id: "contact", label: "Kontak" },
 ];
@@ -38,6 +39,7 @@ const MENU = [
   ["🙋", "Siapa saya dan apa yang saya kerjakan"],
   ["🚀", "Game Verse, GV Platform, dan lainnya"],
   ["🧰", "Teknologi yang dipakai dan dipelajari"],
+  ["🎓", "Sertifikat dan kursus yang sudah diselesaikan"],
   ["🧭", "Perjalanan belajar sejauh ini"],
   ["✉️", "Email, GitHub, Discord, Instagram"],
 ];
@@ -46,6 +48,7 @@ export default function App() {
   const [index, setIndex] = useState(startIndex);
   const [time, setTime] = useState(wib);
   const [open, setOpen] = useState(false);
+  const [cert, setCert] = useState(null);
   const touch = useRef(null);
   const go = (i) => setIndex(clamp(i));
   const step = (d) => setIndex((i) => clamp(i + d));
@@ -63,7 +66,7 @@ export default function App() {
     const onKey = (e) => {
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") { setOpen(false); setCert(null); }
     };
     window.addEventListener("keydown", onKey);
     return () => { clearInterval(id); window.removeEventListener("keydown", onKey); };
@@ -113,6 +116,25 @@ export default function App() {
           <ul className="chips">{skills.learning.map((s) => <Chip key={s} name={s} />)}</ul>
         </div>
       </div>
+    </Section>,
+
+    <Section id="certificates" title="Sertifikat" key="certificates">
+      <ul className="certs">
+        {certificates.map((c) => (
+          <li key={c.title}>
+            <button className="cert" onClick={() => setCert(c)}>
+              <span className="cert-thumb">
+                <img src={c.image} alt="" loading="lazy" onError={(e) => (e.currentTarget.style.visibility = "hidden")} />
+                <span className="cert-eye" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" /><circle cx="12" cy="12" r="3" /></svg>
+                </span>
+              </span>
+              <span className="cert-title">{c.title}</span>
+              <span className="cert-meta">{c.issuer}, {c.year}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
     </Section>,
 
     <Section id="journey" title="Jejak belajar" key="journey">
@@ -188,6 +210,18 @@ export default function App() {
           </button>
         </div>
       </div>
+
+      {cert && (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label={cert.title} onClick={() => setCert(null)}>
+          <figure onClick={(e) => e.stopPropagation()}>
+            <img src={cert.image} alt={`Sertifikat ${cert.title}`} />
+            <figcaption><strong>{cert.title}</strong><span>{cert.issuer}, {cert.year}</span></figcaption>
+            <button className="arrow lb-close" onClick={() => setCert(null)} aria-label="Tutup">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m2 2 10 10M12 2 2 12" /></svg>
+            </button>
+          </figure>
+        </div>
+      )}
 
       <div className="scrim" onClick={() => setOpen(false)} />
       <aside className="drawer" role="dialog" aria-modal="true" aria-label="Menu" inert={open ? undefined : ""}>

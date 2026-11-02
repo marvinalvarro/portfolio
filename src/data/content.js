@@ -54,6 +54,12 @@ export const skills = {
   learning: ["UI/UX design", "Web development"],
 };
 
+export const certificates = [
+  { title: "Nama Sertifikat 1", issuer: "Penerbit", year: "2026", image: "/sertifikat/sertifikat-1.png" },
+  { title: "Nama Sertifikat 2", issuer: "Penerbit", year: "2026", image: "/sertifikat/sertifikat-2.png" },
+  { title: "Nama Sertifikat 3", issuer: "Penerbit", year: "2025", image: "/sertifikat/sertifikat-3.png" },
+];
+
 export const journey = [
   {
     title: "Mulai dari rasa penasaran",
