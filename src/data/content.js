@@ -11,7 +11,7 @@ export const profile = {
 export const about = {
   tagline: "Belum jadi ahli. Hanya orang yang terus membangun.",
   paragraphs: [
-    "Saya Umar Hadyu Al Fajri, mahasiswa Teknik Informatika semester 5 di Universitas Muhammadiyah Ponorogo. Saya tertarik pada web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah menjadi sesuatu yang bisa dipakai orang.",
+    "Saya Umar, mahasiswa Teknik Informatika semester 5 di Universitas Muhammadiyah Ponorogo. Saya tertarik pada web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah menjadi sesuatu yang bisa dipakai orang.",
     "Di luar kuliah, saya mengelola komunitas Discord bernama Game Verse dan membangun platform digital untuk komunitas itu. Dari situ saya belajar bahwa membuat sesuatu untuk orang lain jauh lebih menantang (dan seru) daripada membuat untuk diri sendiri.",
     "Saya belum merasa menjadi ahli, dan itu tidak apa-apa. Saya lebih suka terus mencoba, salah, lalu memperbaikinya.",
   ],
@@ -75,6 +75,7 @@ export const contact = {
   headline: "Punya ide? Ayo kita wujudkan.",
   text: "Mau kolaborasi, punya ide, atau sekadar ngobrol soal web? Kirim pesan saja.",
   links: [
+    { label: "CV", value: "Lihat CV", href: "https://drive.google.com/drive/folders/1okGRTNu1xbjpuqIg-6Uh01RrI4SZw824?usp=sharing" },
     { label: "Email", value: "umarhadyu1505@gmail.com", href: "mailto:umarhadyu1505@gmail.com" },
     { label: "GitHub", value: "@marvinalvarro", href: "https://github.com/marvinalvarro" },
     { label: "Discord", value: "Server Game Verse", href: "https://discord.gg/N8Wg9Zv3z5" },
