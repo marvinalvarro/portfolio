@@ -199,10 +199,11 @@ export default function App() {
         </div>
         {SLIDES.map((s, i) => (
           <button key={s.id} className={i === index ? "menu-item on" : "menu-item"} onClick={() => { go(i); setOpen(false); }}>
-            <span className="menu-ico" aria-hidden="true">{MENU[i][0]}</span>
-            <span><strong>{s.label}</strong><span className="sub">{MENU[i][1]}</span></span>
+            <span className="menu-text"><strong>{s.label}</strong><span className="sub">{MENU[i][1]}</span></span>
+            <svg className="menu-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
           </button>
         ))}
+        <p className="menu-label">Tautan</p>
         <div className="menu-links">
           {links.map((l) => <a key={l.label} href={l.href} {...ext(l.href)}>{l.label}</a>)}
         </div>

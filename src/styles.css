@@ -150,17 +150,22 @@ h1 { font-size: clamp(2.5rem, 5.6vw, 6.25rem); line-height: 1.02; letter-spacing
   .menu-open .scrim { opacity: 1; visibility: visible; }
   .menu-open .drawer { transform: none; visibility: visible; }
 }
-.drawer-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.drawer-head h2 { font-size: 1.3rem; }
-.menu-item { display: flex; align-items: center; gap: .85rem; width: 100%; text-align: left; padding: .75rem; margin-bottom: .6rem; border: 1px solid var(--line); border-radius: 12px; background: none; }
-.menu-item.on { border-color: var(--red); }
-.menu-ico { flex: none; width: 2.6rem; height: 2.6rem; display: grid; place-items: center; border-radius: 10px; background: #fbe3e3; font-size: 1.3rem; }
-.menu-item strong { display: block; font-weight: 600; }
-.menu-item .sub { display: block; font-size: .85rem; color: var(--muted); line-height: 1.3; }
-.menu-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
-.menu-links a { padding: .55rem .95rem; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; }
 
 @media (min-width: 1500px) {
   html { font-size: 112.5%; }
   .p, p { max-width: 66ch; }
 }
+
+.drawer-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: .9rem; margin-bottom: .4rem; border-bottom: 1px solid var(--line); }
+.drawer-head h2 { font-size: 1.25rem; }
+.menu-item { display: flex; align-items: center; gap: .75rem; width: 100%; min-height: 60px; padding: .7rem .5rem; border: 0; border-bottom: 1px solid var(--line); background: none; text-align: left; }
+.menu-text { flex: 1; min-width: 0; }
+.menu-item strong { display: block; font-size: 1.05rem; font-weight: 600; }
+.menu-item .sub { display: block; margin-top: .1rem; font-size: .85rem; line-height: 1.3; color: var(--muted); }
+.menu-chev { flex: none; color: var(--muted); }
+.menu-item.on { box-shadow: inset 3px 0 0 var(--red); padding-left: .9rem; }
+.menu-item.on strong, .menu-item.on .menu-chev { color: var(--red); }
+.menu-label { margin: 1.4rem 0 .6rem; font-size: .9rem; font-weight: 600; color: var(--muted); }
+.menu-links { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.menu-links a { display: grid; place-items: center; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; font-size: .95rem; font-weight: 500; }
+.menu-links a:last-child:nth-child(odd) { grid-column: 1 / -1; }
