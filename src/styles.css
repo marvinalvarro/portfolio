@@ -132,3 +132,11 @@ h1 { font-size: clamp(2.5rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Gambar proyek */
+.project.has-img { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 1.5rem; align-items: center; }
+.project-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+@media (max-width: 700px) {
+  .project.has-img { grid-template-columns: 1fr; gap: .9rem; }
+  .project-img { order: -1; }
+}

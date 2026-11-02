@@ -11,7 +11,7 @@ export const profile = {
 export const about = {
   tagline: "Belum jadi ahli. Hanya orang yang terus membangun.",
   paragraphs: [
-    "Saya Umar, mahasiswa Teknik Informatika semester 5 di Universitas Muhammadiyah Ponorogo. Saya tertarik pada web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah menjadi sesuatu yang bisa dipakai orang.",
+    "Saya Umar Hadyu Al Fajri, mahasiswa Teknik Informatika semester 5 di Universitas Muhammadiyah Ponorogo. Saya tertarik pada web development, UI/UX, dan teknologi secara umum, terutama bagian di mana ide berubah menjadi sesuatu yang bisa dipakai orang.",
     "Di luar kuliah, saya mengelola komunitas Discord bernama Game Verse dan membangun platform digital untuk komunitas itu. Dari situ saya belajar bahwa membuat sesuatu untuk orang lain jauh lebih menantang (dan seru) daripada membuat untuk diri sendiri.",
     "Saya belum merasa menjadi ahli, dan itu tidak apa-apa. Saya lebih suka terus mencoba, salah, lalu memperbaikinya.",
   ],
@@ -20,6 +20,7 @@ export const about = {
 export const projects = [
   {
     title: "Game Verse",
+    image: "/gameverse.png",
     kind: "Komunitas Discord",
     description:
       "Komunitas gaming di Discord dengan sistem role, rank, event, dan bot otomatis untuk menjaga server tetap hidup.",
@@ -29,6 +30,7 @@ export const projects = [
   },
   {
     title: "GV Platform",
+    image: "/gvplatform.png",
     kind: "Platform komunitas",
     description:
       "Platform untuk anggota Game Verse: login, memberi rating, dan menyampaikan masukan langsung ke pengelola.",
