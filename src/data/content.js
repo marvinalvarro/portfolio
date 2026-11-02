@@ -19,6 +19,15 @@ export const about = {
 
 export const projects = [
   {
+    title: "Proyek Web Pribadi",
+    kind: "Eksperimen",
+    description:
+      "Tempat untuk proyek website lainnya: latihan, eksperimen, dan hal-hal kecil yang saya bangun sambil belajar.",
+    tech: [],
+    demo: "",
+    source: "",
+  },
+  {
     title: "Game Verse",
     image: "/gameverse.png",
     kind: "Komunitas Discord",
@@ -36,15 +45,6 @@ export const projects = [
       "Platform untuk anggota Game Verse: login, memberi rating, dan menyampaikan masukan langsung ke pengelola.",
     tech: [],
     demo: "https://bit.ly/gameverseid",
-    source: "",
-  },
-  {
-    title: "Proyek Web Pribadi",
-    kind: "Eksperimen",
-    description:
-      "Tempat untuk proyek website lainnya: latihan, eksperimen, dan hal-hal kecil yang saya bangun sambil belajar.",
-    tech: [],
-    demo: "",
     source: "",
   },
 ];
