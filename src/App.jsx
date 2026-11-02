@@ -33,9 +33,19 @@ const Chip = ({ name }) => {
   );
 };
 
+const MENU = [
+  ["🏠", "Kembali ke bagian paling atas"],
+  ["🙋", "Siapa saya dan apa yang saya kerjakan"],
+  ["🚀", "Game Verse, GV Platform, dan lainnya"],
+  ["🧰", "Teknologi yang dipakai dan dipelajari"],
+  ["🧭", "Perjalanan belajar sejauh ini"],
+  ["✉️", "Email, GitHub, Discord, Instagram"],
+];
+
 export default function App() {
   const [index, setIndex] = useState(startIndex);
   const [time, setTime] = useState(wib);
+  const [open, setOpen] = useState(false);
   const touch = useRef(null);
   const go = (i) => setIndex(clamp(i));
   const step = (d) => setIndex((i) => clamp(i + d));
@@ -53,6 +63,7 @@ export default function App() {
     const onKey = (e) => {
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => { clearInterval(id); window.removeEventListener("keydown", onKey); };
@@ -130,7 +141,7 @@ export default function App() {
   ];
 
   return (
-    <div className="app">
+    <div className={open ? "app menu-open" : "app"}>
       <aside className="profile">
         {profile.photo && (
           <img className="avatar" src={profile.photo} alt={`Foto ${profile.name}`} width="300" height="375" />
@@ -139,6 +150,9 @@ export default function App() {
           <p className="profile-name">{profile.name}</p>
           <p className="profile-role">{profile.role || "Mahasiswa Teknik Informatika"}</p>
         </div>
+        <button className="menu-btn" onClick={() => setOpen(true)} aria-label="Buka menu" aria-expanded={open}>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="4" r="1.8" /><circle cx="10" cy="10" r="1.8" /><circle cx="10" cy="16" r="1.8" /></svg>
+        </button>
         <ul className="profile-links">
           {links.map((l) => (
             <li key={l.label}><a href={l.href} {...ext(l.href)}>{l.label}</a></li>
@@ -174,6 +188,25 @@ export default function App() {
           </button>
         </div>
       </div>
+
+      <div className="scrim" onClick={() => setOpen(false)} />
+      <aside className="drawer" role="dialog" aria-modal="true" aria-label="Menu" inert={open ? undefined : ""}>
+        <div className="drawer-head">
+          <h2>Menu</h2>
+          <button className="arrow" onClick={() => setOpen(false)} aria-label="Tutup menu">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m2 2 10 10M12 2 2 12" /></svg>
+          </button>
+        </div>
+        {SLIDES.map((s, i) => (
+          <button key={s.id} className={i === index ? "menu-item on" : "menu-item"} onClick={() => { go(i); setOpen(false); }}>
+            <span className="menu-ico" aria-hidden="true">{MENU[i][0]}</span>
+            <span><strong>{s.label}</strong><span className="sub">{MENU[i][1]}</span></span>
+          </button>
+        ))}
+        <div className="menu-links">
+          {links.map((l) => <a key={l.label} href={l.href} {...ext(l.href)}>{l.label}</a>)}
+        </div>
+      </aside>
     </div>
   );
 }
