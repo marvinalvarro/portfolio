@@ -55,8 +55,8 @@ export const skills = {
 };
 
 export const certificates = [
-  { title: "Belajar Dasar AI", issuer: "Penerbit", year: "2026", image: "/sertifikat/sertifikat-1.png" },
-  { title: "Memulai Pemrograman dengan Python", issuer: "Penerbit", year: "2026", image: "/sertifikat/sertifikat-2.png" },
+  { title: "Belajar Dasar AI", issuer: "Dicoding", year: "05 Februari 2026", image: "/sertifikat/sertifikat-1.png" },
+  { title: "Memulai Pemrograman dengan Python", issuer: "Dicoding", year: "05 Februari 2026", image: "/sertifikat/sertifikat-2.png" },
 ];
 
 export const journey = [
