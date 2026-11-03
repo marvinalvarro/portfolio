@@ -54,6 +54,7 @@ export default function App() {
   const step = (d) => setIndex((i) => clamp(i + d));
 
   const links = contact.links.filter((l) => l.href);
+  const cv = links.find((l) => l.label === "CV");
   const ext = (href) => (href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noreferrer" });
 
   useEffect(() => {
@@ -93,6 +94,7 @@ export default function App() {
       <div className="hero-actions">
         <button className="btn btn-solid" onClick={() => go(2)}>Lihat proyek</button>
         <button className="btn" onClick={() => go(1)}>Tentang saya</button>
+        {cv && <a className="btn" href={cv.href} {...ext(cv.href)}>Unduh CV</a>}
       </div>
     </div>,
 
