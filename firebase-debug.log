@@ -1,0 +1,97 @@
+[debug] [2026-11-06T11:34:25.669Z] ----------------------------------------------------------------------
+[debug] [2026-11-06T11:34:25.674Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2026-11-06T11:34:25.674Z] CLI Version:   15.35.0
+[debug] [2026-11-06T11:34:25.674Z] Platform:      win32
+[debug] [2026-11-06T11:34:25.674Z] Node Version:  v24.13.0
+[debug] [2026-11-06T11:34:25.675Z] Detected Agent: unknown
+[debug] [2026-11-06T11:34:25.675Z] Time:          Fri Nov 06 2026 18:34:25 GMT+0700 (Waktu Indochina)
+[debug] [2026-11-06T11:34:25.675Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\CODINGAN GW\my-portfolio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-11-06T11:36:02.806Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:508:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1327:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:284:20)
+    at ReadStream.emit (node:events:520:35)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-11-06T11:37:20.001Z] ----------------------------------------------------------------------
+[debug] [2026-11-06T11:37:20.005Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2026-11-06T11:37:20.006Z] CLI Version:   15.35.0
+[debug] [2026-11-06T11:37:20.006Z] Platform:      win32
+[debug] [2026-11-06T11:37:20.006Z] Node Version:  v24.13.0
+[debug] [2026-11-06T11:37:20.006Z] Detected Agent: unknown
+[debug] [2026-11-06T11:37:20.006Z] Time:          Fri Nov 06 2026 18:37:20 GMT+0700 (Waktu Indochina)
+[debug] [2026-11-06T11:37:20.006Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\CODINGAN GW\my-portfolio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2026-11-06T11:38:03.127Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-06T11:38:03.127Z] > authorizing via signed-in user (umarhadyu1505@gmail.com)
+[debug] [2026-11-06T11:38:20.371Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:20.371Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:20.373Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2026-11-06T11:38:20.374Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"umar-portfolio-2026"}
+[debug] [2026-11-06T11:38:21.046Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2026-11-06T11:38:21.047Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_AVAILABLE","suggestedProjectId":"umar-portfolio-2026"}
+[debug] [2026-11-06T11:38:52.767Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:52.767Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:52.768Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2026-11-06T11:38:52.768Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"umar-portfolio-2026","name":"umar-portfolio-2026"}
+[debug] [2026-11-06T11:38:53.540Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2026-11-06T11:38:53.540Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.7213440736198189261"}
+[debug] [2026-11-06T11:38:53.541Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:53.541Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:53.542Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7213440736198189261 [none]
+[debug] [2026-11-06T11:38:54.681Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7213440736198189261 200
+[debug] [2026-11-06T11:38:54.681Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.7213440736198189261 {"name":"operations/create_project.global.7213440736198189261","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"260472521144","projectId":"umar-portfolio-2026","lifecycleState":"ACTIVE","name":"umar-portfolio-2026","createTime":"2026-11-06T11:38:51.400Z"}}
+[debug] [2026-11-06T11:38:54.683Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:54.683Z] Checked if tokens are valid: true, expires at: 1793968439807
+[debug] [2026-11-06T11:38:54.684Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/umar-portfolio-2026:addFirebase [none]
+[debug] [2026-11-06T11:38:56.838Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/umar-portfolio-2026:addFirebase 403
+[debug] [2026-11-06T11:38:56.838Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/umar-portfolio-2026:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-11-06T11:38:56.839Z] Request to https://firebase.googleapis.com/v1beta1/projects/umar-portfolio-2026:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2026-11-06T11:38:57.164Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/umar-portfolio-2026:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:415:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.

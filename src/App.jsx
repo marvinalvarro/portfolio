@@ -34,6 +34,13 @@ const Chip = ({ name }) => {
   );
 };
 
+const ThemeIcon = ({ dark }) =>
+  dark ? (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+  ) : (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z" /></svg>
+  );
+
 const MENU = [
   ["🏠", "Kembali ke bagian paling atas"],
   ["🙋", "Siapa saya dan apa yang saya kerjakan"],
@@ -49,6 +56,20 @@ export default function App() {
   const [time, setTime] = useState(wib);
   const [open, setOpen] = useState(false);
   const [cert, setCert] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    try { const t = localStorage.getItem("theme"); if (t) return t; } catch {}
+    return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
+  const dark = theme === "dark";
+  const toggleTheme = () => setTheme(dark ? "light" : "dark");
+  const copyMail = async (addr) => {
+    try { await navigator.clipboard.writeText(addr); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch {}
+  };
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem("theme", theme); } catch {}
+  }, [theme]);
   const touch = useRef(null);
   const go = (i) => setIndex(clamp(i));
   const step = (d) => setIndex((i) => clamp(i + d));
@@ -157,7 +178,12 @@ export default function App() {
         {links.map((l) => (
           <li key={l.label}>
             <span>{l.label}</span>
-            <a href={l.href} {...ext(l.href)}>{l.value}</a>
+            <div className="contact-val">
+              <a href={l.href} {...ext(l.href)}>{l.value}</a>
+              {l.label === "Email" && (
+                <button className="copy-btn" onClick={() => copyMail(l.value)} aria-live="polite">{copied ? "Tersalin" : "Salin"}</button>
+              )}
+            </div>
           </li>
         ))}
       </ul>
@@ -191,6 +217,9 @@ export default function App() {
               {s.label}
             </button>
           ))}
+          <button className="theme-btn" onClick={toggleTheme} aria-label={dark ? "Pindah ke mode terang" : "Pindah ke mode gelap"}>
+            <ThemeIcon dark={dark} />
+          </button>
         </nav>
 
         <main className="viewport" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
@@ -239,6 +268,10 @@ export default function App() {
             <svg className="menu-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
           </button>
         ))}
+        <button className="menu-item" onClick={toggleTheme}>
+          <span className="menu-text"><strong>Tampilan</strong><span className="sub">Ketuk untuk pindah ke mode {dark ? "terang" : "gelap"}</span></span>
+          <ThemeIcon dark={dark} />
+        </button>
         <p className="menu-label">Tautan</p>
         <div className="menu-links">
           {links.map((l) => <a key={l.label} href={l.href} {...ext(l.href)}>{l.label}</a>)}
